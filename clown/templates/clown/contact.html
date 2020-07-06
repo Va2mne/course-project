@@ -1,0 +1,406 @@
+﻿
+<html><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{title}}</title>
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+	<!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+	<!--headerIncludes-->
+    {%load staticfiles%}
+	<!-- Custom-Files -->
+	<link rel="stylesheet" href="{%static 'clown/css/bootstrap.css'%}">
+	<!-- Bootstrap-Core-CSS -->
+	<link href="{%static 'clown/css/single.css'%}" rel="stylesheet" type="text/css">
+	<!-- single page -->
+	<link rel="stylesheet" href="{%static 'clown/css/style.css'%}" type="text/css" media="all">
+	<!-- Style-CSS -->
+	<link href="{%static 'clown/css/font-awesome.min.css'%}" rel="stylesheet">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //Custom-Files -->
+
+	<!-- Web-Fonts -->
+	<link href="//fonts.googleapis.com/css?family=Aleo:300,300i,400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+	<!-- //Web-Fonts -->
+
+</head>
+
+<body>
+	<div id="page" class="page"><!-- home -->
+		
+		<!-- //home -->
+
+		<!-- contact -->
+		
+		<!-- //contact -->
+		<!-- map -->
+		
+		<!-- //map -->
+
+		<!-- footer -->
+		
+		<!-- //footer -->
+		<!-- footer social icons -->
+		
+		<!-- //footer social icons -->
+		<!-- copyright -->
+		
+		<!-- //copyright -->
+
+		<!-- move top icon -->
+		
+		<!-- //move top icon --><!-- home -->
+		
+		<!-- //home -->
+
+		<!-- about -->
+		
+		<!-- //about -->
+
+		<!-- places -->
+		
+		<!-- //places -->
+
+		<!-- what -->
+		
+		<!-- what -->
+
+		<!-- blog -->
+		
+		<!-- //blog -->
+
+		<!-- middle section -->
+		
+		<!-- //middle section -->
+
+		<!-- footer -->
+		
+		<!-- //footer -->
+		<!-- footer social icons -->
+		
+		<!-- //footer social icons -->
+		<!-- copyright -->
+		
+		<!-- //copyright -->
+
+		<!-- move top icon -->
+		
+		<!-- //move top icon --><!-- home -->
+		
+		<!-- //home -->
+
+		<!-- single -->
+		
+		<!-- //single -->
+
+		<!-- middle section -->
+		
+		<!-- //middle section -->
+
+		<!-- footer -->
+		
+		<!-- //footer -->
+		<!-- footer social icons -->
+		
+		<!-- //footer social icons -->
+		<!-- copyright -->
+		
+		<!-- //copyright -->
+
+		<!-- move top icon -->
+		
+		<!-- //move top icon --><!-- home -->
+		
+		<!-- //home -->
+
+		<!-- Gallery -->
+		
+		<!-- //gallery -->
+
+		<!-- footer -->
+		
+		<!-- //footer -->
+		<!-- footer social icons -->
+		
+		<!-- //footer social icons -->
+		<!-- copyright -->
+		
+		<!-- //copyright -->
+
+		<!-- move top icon -->
+		
+		<!-- //move top icon --><!-- home -->
+		<div id="home">
+			<!-- banner -->
+			<div class="banner_w3lspvt-2 bg bg1">
+				<!-- nav -->
+			<div class="nav_w3ls pt-4 pb-3 text-center">
+					<nav>
+						<label for="drop" class="toggle">Меню</label>
+						<input type="checkbox" id="drop">
+						<ul class="menu">
+							<li><a href="{%url 'home'%}" style="outline: none; cursor: inherit;">Дом</a></li>
+							<li><a href="{%url 'actors'%}" style="outline: none; cursor: inherit;">Актеры</a></li>
+							<li><a href="{%url 'gallery'%}">Картинки</a></li>
+							<li>
+								<!-- First Tier Drop Down -->
+								<label for="drop-2" class="toggle toogle-2">Выбрасывающийся список <span class="fa fa-angle-down" aria-hidden="true" style="outline: none; cursor: inherit;"></span>
+								</label>
+								<a href="#" style="outline: none; cursor: inherit;">Выбрасывающийся список <span class="fa fa-angle-down" aria-hidden="true" style="outline: none; cursor: inherit;"></span></a>
+								<input type="checkbox" id="drop-2">
+								<ul class="text-left">
+									<li><a href="{%url 'home'%}#about" class="drop-text" style="outline: none; cursor: inherit;">О нас</a></li>
+									<li><a href="{%url 'home'%}#what" class="drop-text" style="outline: none; cursor: inherit;">Шо мы творим??</a></li>
+									<li><a href="{%url 'home'%}#blog" class="drop-text" style="outline: none; cursor: inherit;">Блог</a></li>
+									<li><a href="{%url 'blogdetails'%}" class="drop-text" style="outline: none; cursor: inherit;">Детализированный блог</a></li>
+								</ul>
+							</li>
+							<li><a href="{%url 'contact'%}">Свяжись со злом</a></li>
+							<li><a href="{%url 'register'%}#gal10">Зарегистрироваться</a></li>
+                            {% if user.is_anonymous %}
+                            <li><a href="#gal11">Войти</a></li>
+                            {%else%}
+                            <li><a href="{%url 'logout'%}">Выйти</a></li>
+                            {% endif %}
+                            {% if user.is_authenticated %}
+                            <img src="../../static/clown/images/te2.jpg" alt="" class="img-user" style="outline: none; cursor: inherit; width: 30px;border-radius: 50%;">
+                          
+                            {% endif %}
+                            <li>{{user}}</li>
+                            {% if user.is_authenticated %}
+                            <li>
+								<a href="">
+									<span class="" style="outline: none; cursor: inherit;">&#128722</span>
+								</a>
+							</li>
+                            {% endif %}
+						</ul>
+					</nav>
+				</div>
+				<!-- //nav -->
+
+                <div id="gal10" class="pop-overlay animate">
+					<div class="popup">
+                       <form action="" method="post">
+      {% csrf_token %}
+      <!-- as_p для того, чтобы каждый элемент формы был с новой строки -->
+      <p>
+             <label for="id_username">Ник:</label> 
+             <input type="text" name="username" maxlength="150" autofocus="" required="" id="id_username" style="background-color: #000; color: #d1af09; border: 1px solid #ced4da;"> 
+           <span class="helptext">Требуемый. 150 символов или меньше. Только буквы, цифры и спец. знаки @/./+/-/_.</span>
+      </p>
+                           <p>
+                           <label for="id_password1">Пароль:</label> 
+                           <input type="password" name="password1" required="" id="id_password1" style="background-color: #000; color: #d1af09; border: 1px solid #ced4da;"> 
+                           <span class="helptext"></span>
+                           </p>
+                           <ul>
+                           <li>Ваш пароль не может быть слишком похож на вашу другую личную информацию.</li>
+                           <li>Ваш пароль должен содержать не менее 8 символов.</li>
+                           <li>Ваш пароль не может быть часто используемым паролем.</li>
+                           <li>Ваш пароль не может быть полностью цифровым.</li>
+                           </ul>
+                           <p>
+                           <label for="id_password2">Подтверждение пароля:</label> 
+                           <input type="password" name="password2" required="" id="id_password2" style="background-color: #000; color: #d1af09; border: 1px solid #ced4da;"> 
+                           <span class="helptext">Введите тот же пароль, что и раньше, для проверки.</span>
+                           </p>
+                           <button type="submit" style="background-color: #000; color: #d1af09; border: 1px solid #ced4da;">Зарегистрироваться</button>
+      
+<a class="close" href="{%url 'contact'%}">×</a>
+    </form>
+					</div>
+				</div>
+
+                 <div id="gal11" class="pop-overlay animate">
+					<div class="popup">
+								<form action="{%url 'home'%}" method="post">
+      {% csrf_token %}
+      <!-- as_p для того, чтобы каждый элемент формы был с новой строки -->
+                                    <p>
+    <label for="id_username">Ник:</label>
+    <input type="text" name="username" required id="id_username" style="background-color: #000; color: #d1af09; border: 1px solid #ced4da; right:auto;">
+</p>
+<p>
+    <label for="id_password">Пароль:</label>
+    <input type="password" name="password" required id="id_password" style="background-color: #000; color: #d1af09; border: 1px solid #ced4da; right:auto;">
+</p>
+      <button type="submit" style="background-color: #000; color: #d1af09; border: 1px solid #ced4da; right:auto;">Войти в тебя</button>
+    
+						<a class="close" href="{%url 'contact'%}">×</a>
+                        </form>
+					</div>
+				</div>
+
+				<div class="banner-text-2 text-right">
+					<div class="banner-bot-2 editContent mb-3">
+						<h1><a href="{%url 'home'%}" class="logo text-wh editContent" style="outline: none; cursor: inherit;">KILLING VACATION</a></h1>
+					</div>
+				</div>
+			</div>
+			<!-- //banner -->
+		</div>
+		<!-- //home -->
+
+		<!-- contact -->
+		<div class="contact-w3l py-5 editContent" style="outline: none; cursor: inherit;">
+			<div class="container py-xl-5 py-lg-3">
+				<div class="text-center mb-sm-5 mb-4 pb-lg-4">
+					<h3 class="editContent tittle text-bl let" style="outline: none; cursor: inherit;">Свяжись с нами</h3>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 contact-w3pvt-mobiits-w3layouts editContent" style="outline: none; cursor: inherit;">
+						<h4 class="editContent contact-title text-bl mb-4" style="outline: none; cursor: inherit;">Наш адрес</h4>
+						<h5 class="editContent font-weight-light text-bl mb-4" style="outline: none; cursor: inherit;">Если у вас есть вопросы к нам, мы вам ответим
+							просто
+							используйте
+							форму ниже. Мы постараемся ответить вам
+							в течении одних суток.</h5>
+						<div class="midd-contact my-xl-5 my-4 pl-4 border-left">
+							<h6 class="editContent text-bl mb-2" style="outline: none; cursor: inherit;">Адрес &amp; Направление:</h6>
+							
+						</div>
+						<p class="editContent para-w3pvt-mobiits-w3layouts mb-3" style="outline: none; cursor: inherit;">
+							<span class="fa fa-map-marker pr-3" style="outline: none; cursor: inherit;"></span>РФ, Омск, Рокоссовского 32, 195</p>
+						<p class="editContent para-w3pvt-mobiits-w3layouts my-sm-3 my-2" style="outline: none; cursor: inherit;">
+							<span class="fa fa-phone pr-3" style="outline: none; cursor: inherit;"></span>+7 950 334 04 89</p>
+						<p class="para-w3pvt-mobiits-w3layouts mb-3 editContent" style="outline: none; cursor: inherit;">
+							<span class="fa fa-envelope-open pr-2" style="outline: none; cursor: inherit;"></span>
+							<a href="http://vk.com/mismanmus" class="editContent" style="outline: none; cursor: inherit;">mismanmus@yandex.ru</a>
+						</p>
+					</div>
+					<div class="col-lg-6 regstr-r-w3-w3pvt-mobiits mt-lg-0 mt-5 mb-4 editContent" style="outline: none; cursor: inherit;">
+						<h4 class="editContent contact-title text-bl mb-4" style="outline: none; cursor: inherit;">Напиши</h4>
+						<div class="form-bg-w3ls">
+							<form action="#" method="post">
+                                {% csrf_token %}
+								<div class="form-group editContent" style="outline: none; cursor: inherit;">
+									<input type="text" name="Name" class="form-control" placeholder="Имя" required="">
+								</div>
+								<div class="form-group editContent" style="outline: none; cursor: inherit;">
+									<input type="email" name="Email" class="form-control" placeholder="Мыло" required="">
+								</div>
+								<div class="form-group editContent" style="outline: none; cursor: inherit;">
+									<input type="text" name="Subject" class="form-control" placeholder="Тема" required="">
+								</div>
+								<div class="form-group editContent" style="outline: none; cursor: inherit;">
+									<textarea name="Message" class="form-control" placeholder="Сообщение" required=""></textarea>
+								</div>
+                                {% if user.is_authenticated %}
+								<button type="submit" class="btn button-w3layouts" style="outline: none; cursor: inherit;">Тыркни</button>
+                                {%else%}
+                            <div class="form-group editContent" style="outline: none; cursor: inherit;">
+									<p>Чтобы написать нам, вы должны авторизоваться.</p>
+								</div>
+                                {% endif %}
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //contact -->
+		<!-- map -->
+		<div class="map p-3 editContent" style="outline: none; cursor: inherit;">
+			<iframe src="https://2gis.ru/omsk/query/%D1%80%D0%BE%D0%BA%D0%BE%D1%81%D1%81%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE%2C%2032/geo/282110631930573?queryState=center%2F73.232353%2C55.001429%2Fzoom%2F16" allowfullscreen=""></iframe>
+		</div>
+		<!-- //map -->
+
+		<!-- footer -->
+		<footer class="py-4 editContent" style="outline: none; cursor: inherit;">
+			<div class="container py-xl-5 py-3">
+				<div class="row">
+					<div class="col-lg-4 col-sm-6 col-8 footer-grid editContent mb-3" style="outline: none; cursor: inherit;">
+						<h2 class="mb-3">
+							<a class="logo-footer tm-clr let editContent" href="{%url 'home'%}" style="outline: none; cursor: inherit;">KILLING VACATION</a>
+						</h2>
+					</div>
+					<div class="offset-lg-1 col-lg-2 col-sm-6 col-4 footer-grid mt-lg-0 mt-4 editContent mb-3" style="outline: none; cursor: inherit;">
+						<ul class="list-unstyled footer">
+							<li>
+								<a href="{%url 'home'%}" style="outline: none; cursor: inherit;">Указатель</a>
+							</li>
+							<li>
+								<a href="{%url 'home'%}#about" style="outline: none; cursor: inherit;">О нас</a>
+							</li>
+							<li>
+								<a href="{%url 'home'%}#what" style="outline: none; cursor: inherit;">Шо мы творим</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-lg-2 col-6 footer-grid mt-lg-0 mt-4 editContent mb-3" style="outline: none; cursor: inherit;">
+						<ul class="list-unstyled footer">
+							<li>
+								<a href="{%url 'home'%}#desti" style="outline: none; cursor: inherit;">Клоуны</a>
+							</li>
+							<li>
+								<a href="{%url 'home'%}#blog" style="outline: none; cursor: inherit;">Блог</a>
+							</li>
+							<li>
+								<a href="{%url 'blogdetails'%}" style="outline: none; cursor: inherit;">Развернутый блог</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-lg-2 col-6 footer-grid mt-lg-0 mt-4 editContent mb-3" style="outline: none; cursor: inherit;">
+						<ul class="list-unstyled footer">
+							<li>
+								<a href="{%url 'gallery'%}" style="outline: none; cursor: inherit;">Картинки</a>
+							</li>
+							<li>
+								<a href="{%url 'contact'%}" style="outline: none; cursor: inherit;">Свяжись с нами</a>
+							</li>
+							<li>
+								<a href="{%url 'home'%}#some" style="outline: none; cursor: inherit;">И еще немного</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- //footer -->
+		<!-- footer social icons -->
+		<div class="social-icons-footer text-center my-3 editContent" style="outline: none; cursor: inherit;">
+			<ul class="list-unstyled">
+				<li>
+									<a href="https://www.facebook.com/profile.php?id=100013200556134">
+										<span class="fa fa-facebook" style="outline: none; cursor: inherit;"></span>
+									</a>
+								</li>
+								<li>
+									<a href="https://twitter.com/Andreimmm32">
+										<span class="fa fa-twitter" style="outline: none; cursor: inherit;"></span>
+									</a>
+								</li>
+								<li>
+									<a href="https://myaccount.google.com/?utm_source=OGB&tab=wk&utm_medium=act&pli=1">
+										<span class="fa fa-google-plus" style="outline: none; cursor: inherit;"></span>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.instagram.com/mismanmus/">
+										<span class="fa fa-instagram" style="outline: none; cursor: inherit;"></span>
+									</a>
+								</li>
+			</ul>
+		</div>
+		<!-- //footer social icons -->
+		<!-- copyright -->
+		<div class="copy_right mb-5">
+			<p class="text-center text-bl let">© 2019 KILLING VACATION. All rights reserved | Design by
+				<a href="http://vk.com/mismanmus">самый красивый парень</a>
+			</p>
+		</div>
+		<!-- //copyright -->
+
+		<!-- move top icon -->
+		<a href="#home" class="move-top text-center"></a>
+		<!-- //move top icon --></div><!-- /#page -->
+
+
+
+</body></html>

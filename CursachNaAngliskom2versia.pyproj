@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Name>CursachNaAngliskom2versia</Name>
+    <RootNamespace>CursachNaAngliskom2versia</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>4d08d6d9-1440-4893-b6e4-aefd483ae98c</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <DjangoSettingsModule>CursachNaAngliskom2versia.settings</DjangoSettingsModule>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="app\forms.py" />
+    <Compile Include="app\models.py" />
+    <Compile Include="app\tests.py" />
+    <Compile Include="app\views.py" />
+    <Compile Include="app\__init__.py" />
+    <Compile Include="app\migrations\__init__.py" />
+    <Compile Include="clown\admin.py" />
+    <Compile Include="clown\apps.py" />
+    <Compile Include="clown\migrations\__init__.py" />
+    <Compile Include="clown\models.py" />
+    <Compile Include="clown\tests.py" />
+    <Compile Include="clown\views.py" />
+    <Compile Include="clown\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="CursachNaAngliskom2versia\__init__.py" />
+    <Compile Include="CursachNaAngliskom2versia\settings.py" />
+    <Compile Include="CursachNaAngliskom2versia\urls.py" />
+    <Compile Include="CursachNaAngliskom2versia\wsgi.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\" />
+    <Folder Include="app\migrations\" />
+    <Folder Include="app\static\" />
+    <Folder Include="app\static\app\" />
+    <Folder Include="app\static\app\content\" />
+    <Folder Include="app\static\app\fonts\" />
+    <Folder Include="app\static\app\scripts\" />
+    <Folder Include="app\templates\" />
+    <Folder Include="app\templates\app\" />
+    <Folder Include="clown\" />
+    <Folder Include="clown\migrations\" />
+    <Folder Include="clown\static\" />
+    <Folder Include="clown\static\app\" />
+    <Folder Include="clown\static\app\content\" />
+    <Folder Include="clown\static\app\fonts\" />
+    <Folder Include="clown\static\app\scripts\" />
+    <Folder Include="clown\static\clown\" />
+    <Folder Include="clown\static\clown\css\" />
+    <Folder Include="clown\static\clown\fonts\" />
+    <Folder Include="clown\static\clown\images\" />
+    <Folder Include="clown\templates\" />
+    <Folder Include="clown\templates\clown\" />
+    <Folder Include="CursachNaAngliskom2versia\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="clown\static\app\content\bootstrap.css" />
+    <Content Include="clown\static\app\content\bootstrap.min.css" />
+    <Content Include="clown\static\app\content\site.css" />
+    <Content Include="clown\static\app\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="clown\static\app\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="clown\static\app\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="clown\static\app\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="clown\static\app\scripts\bootstrap.js" />
+    <Content Include="clown\static\app\scripts\bootstrap.min.js" />
+    <None Include="clown\static\app\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="clown\static\app\scripts\jquery-1.10.2.js" />
+    <Content Include="clown\static\app\scripts\jquery-1.10.2.min.js" />
+    <Content Include="clown\static\app\scripts\jquery-1.10.2.min.map" />
+    <None Include="clown\static\app\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="clown\static\app\scripts\jquery.validate.js" />
+    <Content Include="clown\static\app\scripts\jquery.validate.min.js" />
+    <Content Include="clown\static\app\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="clown\static\app\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="clown\static\app\scripts\modernizr-2.6.2.js" />
+    <Content Include="clown\static\app\scripts\respond.js" />
+    <Content Include="clown\static\app\scripts\respond.min.js" />
+    <None Include="clown\static\app\scripts\_references.js" />
+    <Content Include="clown\static\clown\css\bootstrap.css" />
+    <Content Include="clown\static\clown\css\font-awesome.min.css" />
+    <Content Include="clown\static\clown\css\single.css" />
+    <Content Include="clown\static\clown\css\style.css" />
+    <Content Include="clown\static\clown\fonts\fontawesome-webfont.eot" />
+    <Content Include="clown\static\clown\fonts\fontawesome-webfont.svg" />
+    <Content Include="clown\static\clown\fonts\fontawesome-webfont.ttf" />
+    <Content Include="clown\static\clown\fonts\fontawesome-webfont.woff" />
+    <Content Include="clown\static\clown\fonts\fontawesome-webfont.woff2" />
+    <Content Include="clown\static\clown\fonts\FontAwesome.otf" />
+    <Content Include="clown\static\clown\images\2.jpg" />
+    <Content Include="clown\static\clown\images\ab.jpg" />
+    <Content Include="clown\static\clown\images\b2.jpg" />
+    <Content Include="clown\static\clown\images\b4.jpg" />
+    <Content Include="clown\static\clown\images\b5.jpg" />
+    <Content Include="clown\static\clown\images\b6.jpg" />
+    <Content Include="clown\static\clown\images\bg1.jpg" />
+    <Content Include="clown\static\clown\images\g1.jpg" />
+    <Content Include="clown\static\clown\images\g10.jpg" />
+    <Content Include="clown\static\clown\images\g11.jpg" />
+    <Content Include="clown\static\clown\images\g12.jpg" />
+    <Content Include="clown\static\clown\images\g13.jpg" />
+    <Content Include="clown\static\clown\images\g14.jpg" />
+    <Content Include="clown\static\clown\images\g15.jpg" />
+    <Content Include="clown\static\clown\images\g16.jpg" />
+    <Content Include="clown\static\clown\images\g17.jpg" />
+    <Content Include="clown\static\clown\images\g18.jpg" />
+    <Content Include="clown\static\clown\images\g2.jpg" />
+    <Content Include="clown\static\clown\images\g3.jpg" />
+    <Content Include="clown\static\clown\images\g4.jpg" />
+    <Content Include="clown\static\clown\images\g5.jpg" />
+    <Content Include="clown\static\clown\images\g6.jpg" />
+    <Content Include="clown\static\clown\images\g7.jpg" />
+    <Content Include="clown\static\clown\images\g8.jpg" />
+    <Content Include="clown\static\clown\images\g9.jpg" />
+    <Content Include="clown\static\clown\images\move-top.png" />
+    <Content Include="clown\static\clown\images\single.jpg" />
+    <Content Include="clown\static\clown\images\te1.jpg" />
+    <Content Include="clown\static\clown\images\te2.jpg" />
+    <Content Include="clown\static\clown\images\Thumbs.db" />
+    <Content Include="clown\static\clown\images\tit-bg.jpg" />
+    <Content Include="clown\static\clown\images\tra1.jpg" />
+    <Content Include="clown\static\clown\images\tra2.jpg" />
+    <Content Include="clown\static\clown\images\tra3.jpg" />
+    <Content Include="clown\static\clown\images\tra4.jpg" />
+    <Content Include="clown\templates\clown\actors.html" />
+    <Content Include="clown\templates\clown\blogdetails.html" />
+    <Content Include="clown\templates\clown\contact.html" />
+    <Content Include="clown\templates\clown\gallery.html" />
+    <Content Include="clown\templates\clown\index.html" />
+    <Content Include="clown\templates\clown\login.html" />
+    <Content Include="clown\templates\clown\register.html" />
+    <Content Include="requirements.txt" />
+    <Content Include="db.sqlite3" />
+    <Content Include="app\static\app\content\bootstrap.css" />
+    <Content Include="app\static\app\content\bootstrap.min.css" />
+    <Content Include="app\static\app\content\site.css" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="app\static\app\scripts\bootstrap.js" />
+    <Content Include="app\static\app\scripts\bootstrap.min.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.min.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.min.map" />
+    <Content Include="app\static\app\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.min.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="app\static\app\scripts\modernizr-2.6.2.js" />
+    <Content Include="app\static\app\scripts\respond.js" />
+    <Content Include="app\static\app\scripts\respond.min.js" />
+    <Content Include="app\static\app\scripts\_references.js" />
+    <Content Include="app\templates\app\about.html" />
+    <Content Include="app\templates\app\contact.html" />
+    <Content Include="app\templates\app\index.html" />
+    <Content Include="app\templates\app\layout.html" />
+    <Content Include="app\templates\app\login.html" />
+    <Content Include="app\templates\app\loginpartial.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="readme.html">
+      <SubType>WebBrowser</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.7</Version>
+      <Description>env (Python 3.7 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,454 @@
+﻿<html><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{title}}</title>
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+	<!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+	<!--headerIncludes-->
+    {%load staticfiles%}
+	<!-- Custom-Files -->
+	<link rel="stylesheet" href="{%static 'clown/css/bootstrap.css'%}">
+	<!-- Bootstrap-Core-CSS -->
+	<link href="{%static 'clown/css/single.css'%}" rel="stylesheet" type="text/css">
+	<!-- single page -->
+	<link rel="stylesheet" href="{%static 'clown/css/style.css'%}" type="text/css" media="all">
+	<!-- Style-CSS -->
+	<link href="{%static 'clown/css/font-awesome.min.css'%}" rel="stylesheet">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //Custom-Files -->
+
+	<!-- Web-Fonts -->
+	<link href="//fonts.googleapis.com/css?family=Aleo:300,300i,400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+	<!-- //Web-Fonts -->
+
+</head>
+
+<body>
+	<div id="page" class="page"><!-- home -->
+		
+		<!-- //home -->
+
+		<!-- contact -->
+		
+		<!-- //contact -->
+		<!-- map -->
+		
+		<!-- //map -->
+
+		<!-- footer -->
+		
+		<!-- //footer -->
+		<!-- footer social icons -->
+		
+		<!-- //footer social icons -->
+		<!-- copyright -->
+		
+		<!-- //copyright -->
+
+		<!-- move top icon -->
+		
+		<!-- //move top icon --><!-- home -->
+		
+		<!-- //home -->
+
+		<!-- about -->
+		
+		<!-- //about -->
+
+		<!-- places -->
+		
+		<!-- //places -->
+
+		<!-- what -->
+		
+		<!-- what -->
+
+		<!-- blog -->
+		
+		<!-- //blog -->
+
+		<!-- middle section -->
+		
+		<!-- //middle section -->
+
+		<!-- footer -->
+		
+		<!-- //footer -->
+		<!-- footer social icons -->
+		
+		<!-- //footer social icons -->
+		<!-- copyright -->
+		
+		<!-- //copyright -->
+
+		<!-- move top icon -->
+		
+		<!-- //move top icon --><!-- home -->
+		
+		<!-- //home -->
+
+		<!-- single -->
+		
+		<!-- //single -->
+
+		<!-- middle section -->
+		
+		<!-- //middle section -->
+
+		<!-- footer -->
+		
+		<!-- //footer -->
+		<!-- footer social icons -->
+		
+		<!-- //footer social icons -->
+		<!-- copyright -->
+		
+		<!-- //copyright -->
+
+		<!-- move top icon -->
+		
+		<!-- //move top icon --><!-- home -->
+		<div id="home">
+			<!-- banner -->
+			<div class="banner_w3lspvt-6 bg bg1">
+				<!-- nav -->
+				<div class="nav_w3ls pt-4 pb-3 text-center">
+					<nav>
+						<label for="drop" class="toggle">Меню</label>
+						<input type="checkbox" id="drop">
+						<ul class="menu">
+							<li><a href="{%url 'home'%}" style="outline: none; cursor: inherit;">Дом</a></li>
+							<li><a href="{%url 'actors'%}" style="outline: none; cursor: inherit;">Актеры</a></li>
+							<li><a href="{%url 'gallery'%}">Картинки</a></li>
+							<li>
+								<!-- First Tier Drop Down -->
+								<label for="drop-2" class="toggle toogle-2">Выбрасывающийся список <span class="fa fa-angle-down" aria-hidden="true" style="outline: none; cursor: inherit;"></span>
+								</label>
+								<a href="#" style="outline: none; cursor: inherit;">Выбрасывающийся список <span class="fa fa-angle-down" aria-hidden="true" style="outline: none; cursor: inherit;"></span></a>
+								<input type="checkbox" id="drop-2">
+								<ul class="text-left">
+									<li><a href="{%url 'home'%}#about" class="drop-text" style="outline: none; cursor: inherit;">О нас</a></li>
+									<li><a href="{%url 'home'%}#what" class="drop-text" style="outline: none; cursor: inherit;">Шо мы творим??</a></li>
+									<li><a href="{%url 'home'%}#blog" class="drop-text" style="outline: none; cursor: inherit;">Блог</a></li>
+									<li><a href="{%url 'blogdetails'%}" class="drop-text" style="outline: none; cursor: inherit;">Детализированный блог</a></li>
+								</ul>
+							</li>
+							<li><a href="{%url 'contact'%}">Свяжись со злом</a></li>
+                           <li><a href="{%url 'register'%}#gal10">Зарегистрироваться</a></li>
+                            {% if user.is_anonymous %}
+                            <li><a href="#gal11">Войти</a></li>
+                            {%else%}
+                            <li><a href="{%url 'logout'%}">Выйти</a></li>
+                            {% endif %}
+                            {% if user.is_authenticated %}
+                            <img src="../../static/clown/images/te2.jpg" alt="" class="img-user" style="outline: none; cursor: inherit; width: 30px;border-radius: 50%;">
+                          
+                            {% endif %}
+                            <li>{{user}}</li>
+                            {% if user.is_authenticated %}
+                            <li>
+								<a href="">
+									<span class="" style="outline: none; cursor: inherit;">&#128722</span>
+								</a>
+							</li>
+                            {% endif %}
+						</ul>
+					</nav>
+				</div>
+				<!-- //nav -->
+
+                <div id="gal10" class="pop-overlay animate">
+					<div class="popup">
+                       <form action="" method="post">
+      {% csrf_token %}
+      <!-- as_p для того, чтобы каждый элемент формы был с новой строки -->
+      <p>
+             <label for="id_username">Ник:</label> 
+             <input type="text" name="username" maxlength="150" autofocus="" required="" id="id_username" style="background-color: #000; color: #d1af09; border: 1px solid #ced4da;"> 
+           <span class="helptext">Требуемый. 150 символов или меньше. Только буквы, цифры и спец. знаки @/./+/-/_.</span>
+      </p>
+                           <p>
+                           <label for="id_password1">Пароль:</label> 
+                           <input type="password" name="password1" required="" id="id_password1" style="background-color: #000; color: #d1af09; border: 1px solid #ced4da;"> 
+                           <span class="helptext"></span>
+                           </p>
+                           <ul>
+                           <li>Ваш пароль не может быть слишком похож на вашу другую личную информацию.</li>
+                           <li>Ваш пароль должен содержать не менее 8 символов.</li>
+                           <li>Ваш пароль не может быть часто используемым паролем.</li>
+                           <li>Ваш пароль не может быть полностью цифровым.</li>
+                           </ul>
+                           <p>
+                           <label for="id_password2">Подтверждение пароля:</label> 
+                           <input type="password" name="password2" required="" id="id_password2" style="background-color: #000; color: #d1af09; border: 1px solid #ced4da;"> 
+                           <span class="helptext">Введите тот же пароль, что и раньше, для проверки.</span>
+                           </p>
+                           <button type="submit" style="background-color: #000; color: #d1af09; border: 1px solid #ced4da;">Зарегистрироваться</button>
+      
+<a class="close" href="{%url 'actors'%}">×</a>
+    </form>
+					</div>
+				</div>
+
+                 <div id="gal11" class="pop-overlay animate">
+					<div class="popup">
+								<form action="{%url 'home'%}" method="post">
+      {% csrf_token %}
+      <!-- as_p для того, чтобы каждый элемент формы был с новой строки -->
+                                    <p>
+    <label for="id_username">Ник:</label>
+    <input type="text" name="username" required id="id_username" style="background-color: #000; color: #d1af09; border: 1px solid #ced4da; right:auto;">
+</p>
+<p>
+    <label for="id_password">Пароль:</label>
+    <input type="password" name="password" required id="id_password" style="background-color: #000; color: #d1af09; border: 1px solid #ced4da; right:auto;">
+</p>
+      <button type="submit" style="background-color: #000; color: #d1af09; border: 1px solid #ced4da; right:auto;">Войти в тебя</button>
+    
+						<a class="close" href="{%url 'actors'%}">×</a>
+                        </form>
+					</div>
+				</div>
+				<div class="banner-text-6 text-right">
+					<div class="banner-bot-6 editContent mb-3">
+						<h1><a href="{%url 'home'%}" class="logo text-wh editContent">KILLING VACATION</a></h1>
+					</div>
+				</div>
+			</div>
+			<!-- //banner -->
+		</div>
+		<!-- //home -->
+
+		<!-- Gallery -->
+		<section class="gallery py-5 position-relative" id="gallery">
+			<div class="container py-md-5">
+				<div class="text-center mb-sm-5 mb-4">
+					<h3 class="editContent tittle text-bl let mb-2 pt-sm-3" style="outline: none; cursor: inherit;">Актеры, которых Вы можете заказать</h3>
+				</div>
+				<div class="row news-grids no-gutters text-center">
+					<div class="col-md-4 gal-img">
+						<a href="#gal1"><img src="../../static/clown/images/g10.jpg" alt="Gallery Image" class="img-fluid" style="outline: none; cursor: inherit;"></a>
+					</div>
+					<div class="col-md-4 gal-img">
+						<a href="#gal2"><img src="../../static/clown/images/g11.jpg" alt="Gallery Image" class="img-fluid" style="outline: none; cursor: inherit;"></a>
+					</div>
+					<div class="col-md-4 gal-img">
+						<a href="#gal3"><img src="../../static/clown/images/g12.jpg" alt="Gallery Image" class="img-fluid" style="outline: none; cursor: inherit;"></a>
+					</div>
+				</div>
+				<div class="row news-grids no-gutters text-center">
+					<div class="col-md-4 gal-img">
+						<a href="#gal4"><img src="../../static/clown/images/g13.jpg" alt="Gallery Image" class="img-fluid" style="outline: none; cursor: inherit;"></a>
+					</div>
+					<div class="col-md-4 gal-img">
+						<a href="#gal5"><img src="../../static/clown/images/g14.jpg" alt="Gallery Image" class="img-fluid" style="outline: none; cursor: inherit;"></a>
+					</div>
+					<div class="col-md-4 gal-img">
+						<a href="#gal6"><img src="../../static/clown/images/g15.jpg" alt="Gallery Image" class="img-fluid" style="outline: none; cursor: inherit;"></a>
+					</div>
+				</div>
+				<div class="row news-grids no-gutters text-center">
+					<div class="col-md-4 gal-img">
+						<a href="#gal7"><img src="../../static/clown/images/g16.jpg" alt="Gallery Image" class="img-fluid" style="outline: none; cursor: inherit;"></a>
+					</div>
+					<div class="col-md-4 gal-img">
+						<a href="#gal8"><img src="../../static/clown/images/g17.jpg" alt="Gallery Image" class="img-fluid" style="outline: none; cursor: inherit;"></a>
+					</div>
+					<div class="col-md-4 gal-img">
+						<a href="#gal9"><img src="../../static/clown/images/g18.jpg" alt="Gallery Image" class="img-fluid" style="outline: none; cursor: inherit;"></a>
+					</div>
+				</div>
+				<!-- gallery popups -->
+				<!-- popup-->
+				<div id="gal1" class="pop-overlay animate">
+					<div class="popup">
+						<img src="../../static/clown/images/g10.jpg" alt="Popup Image" class="img-fluid" style="outline: none; cursor: inherit;">
+						<p class="editContent mt-4" style="outline: none; cursor: inherit;">Городской маньяк: 1 час - 2 000р.</p>
+						<a class="close" href="#gallery">×</a>
+                        <a class="add" href="#gallery">+</a>
+					</div>
+				</div>
+				<!-- //popup -->
+				<!-- popup-->
+				<div id="gal2" class="pop-overlay animate">
+					<div class="popup">
+						<img src="../../static/clown/images/g11.jpg" alt="Popup Image" class="img-fluid" style="outline: none; cursor: inherit;">
+						<p class="editContent mt-4" style="outline: none; cursor: inherit;">Пятница 13. Старый образ: 1 час - 9 000р. </p>
+						<a class="close" href="#gallery">×</a>
+                        <a class="add" href="#gallery">+</a>
+					</div>
+				</div>
+				<!-- //popup -->
+				<!-- popup-->
+				<div id="gal3" class="pop-overlay animate">
+					<div class="popup">
+						<img src="../../static/clown/images/g12.jpg" alt="Popup Image" class="img-fluid" style="outline: none; cursor: inherit;">
+						<p class="editContent mt-4" style="outline: none; cursor: inherit;">Пятница 13: 1 час - 6 000р.</p>
+						<a class="close" href="#gallery">×</a>
+                        <a class="add" href="#gallery">+</a>
+					</div>
+				</div>
+				<!-- //popup3 -->
+				<!-- popup-->
+				<div id="gal4" class="pop-overlay animate">
+					<div class="popup">
+						<img src="../../static/clown/images/g13.jpg" alt="Popup Image" class="img-fluid" style="outline: none; cursor: inherit;">
+						<p class="editContent mt-4" style="outline: none; cursor: inherit;">Кожанное лицо: 1 час - 13 000р.</p>
+						<a class="close" href="#gallery">×</a>
+                        <a class="add" href="#gallery">+</a>
+					</div>
+				</div>
+				<!-- //popup -->
+				<!-- popup-->
+				<div id="gal5" class="pop-overlay animate">
+					<div class="popup">
+						<img src="../../static/clown/images/g14.jpg" alt="Popup Image" class="img-fluid" style="outline: none; cursor: inherit;">
+						<p class="editContent mt-4" style="outline: none; cursor: inherit;">Оно. 2017г: 1 час - 4 000р.</p>
+						<a class="close" href="#gallery">×</a>
+                        <a class="add" href="#gallery">+</a>
+					</div>
+				</div>
+				<!-- //popup -->
+				<!-- popup-->
+				<div id="gal6" class="pop-overlay animate">
+					<div class="popup">
+						<img src="../../static/clown/images/g15.jpg" alt="Popup Image" class="img-fluid" style="outline: none; cursor: inherit;">
+						<p class="editContent mt-4" style="outline: none; cursor: inherit;">Оно. 1990г: 1 час - 4 500р.</p>
+						<a class="close" href="#gallery">×</a>
+                        <a class="add" href="#gallery">+</a>
+					</div>
+				</div>
+				<!-- //popup -->
+				<!-- popup-->
+				<div id="gal7" class="pop-overlay animate">
+					<div class="popup">
+						<img src="../../static/clown/images/g16.jpg" alt="Popup Image" class="img-fluid" style="outline: none; cursor: inherit;">
+						<p class="editContent mt-4" style="outline: none; cursor: inherit;">2 по цене одного на темной улочке: 1 час - 5 000р.</p>
+						<a class="close" href="#gallery">×</a>
+                        <a class="add" href="#gallery">+</a>
+					</div>
+				</div>
+				<!-- //popup -->
+				<!-- popup-->
+				<div id="gal8" class="pop-overlay animate">
+					<div class="popup">
+						<img src="../../static/clown/images/g17.jpg" alt="Popup Image" class="img-fluid" style="outline: none; cursor: inherit;">
+						<p class="editContent mt-4" style="outline: none; cursor: inherit;">КРИК: 1 час - 1 000р.</p>
+						<a class="close" href="#gallery">×</a>
+                        <a class="add" href="#gallery">+</a>
+					</div>
+				</div>
+				<!-- //popup -->
+				<!-- popup-->
+				<div id="gal9" class="pop-overlay animate">
+					<div class="popup">
+						<img src="../../static/clown/images/g18.jpg" alt="Popup Image" class="img-fluid" style="outline: none; cursor: inherit;">
+						<p class="editContent mt-4" style="outline: none; cursor: inherit;">Знамененитый чел с топором, бегующий за вами в особняке..: 1 час - 20 000р.</p>
+						<a class="close" href="#gallery">×</a>
+                        <a class="add" href="#gallery">+</a>
+					</div>
+				</div>
+				<!-- //popup -->
+				<!-- //gallery popups -->
+			</div>
+		</section>
+		<!-- //gallery -->
+
+		<!-- footer -->
+		<footer class="py-4 editContent" style="outline: none; cursor: inherit;">
+			<div class="container py-xl-5 py-3">
+				<div class="row">
+					<div class="col-lg-4 col-sm-6 col-8 footer-grid editContent mb-3" style="outline: none; cursor: inherit;">
+						<h2 class="mb-3">
+							<a class="logo-footer tm-clr let editContent" href="index.html" style="outline: none; cursor: inherit;">KILLING VACATION</a>
+						</h2>
+					</div>
+					<div class="offset-lg-1 col-lg-2 col-sm-6 col-4 footer-grid mt-lg-0 mt-4 editContent mb-3" style="outline: none; cursor: inherit;">
+						<ul class="list-unstyled footer">
+							<li>
+								<a href="{%url 'home'%}" style="outline: none; cursor: inherit;">Указатель</a>
+							</li>
+							<li>
+								<a href="{%url 'home'%}#about" style="outline: none; cursor: inherit;">О нас</a>
+							</li>
+							<li>
+								<a href="{%url 'home'%}#what" style="outline: none; cursor: inherit;">Шо мы творим</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-lg-2 col-6 footer-grid mt-lg-0 mt-4 editContent mb-3" style="outline: none; cursor: inherit;">
+						<ul class="list-unstyled footer">
+							<li>
+								<a href="{%url 'home'%}#desti" style="outline: none; cursor: inherit;">Клоуны</a>
+							</li>
+							<li>
+								<a href="{%url 'home'%}#blog" style="outline: none; cursor: inherit;">Блог</a>
+							</li>
+							<li>
+								<a href="{%url 'blogdetails'%}" style="outline: none; cursor: inherit;">Развернутый блог</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-lg-2 col-6 footer-grid mt-lg-0 mt-4 editContent mb-3" style="outline: none; cursor: inherit;">
+						<ul class="list-unstyled footer">
+							<li>
+								<a href="{%url 'gallery'%}" style="outline: none; cursor: inherit;">Картинки</a>
+							</li>
+							<li>
+								<a href="{%url 'contact'%}" style="outline: none; cursor: inherit;">Свяжись с нами</a>
+							</li>
+							<li>
+								<a href="{%url 'home'%}#some" style="outline: none; cursor: inherit;">И еще немного</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- //footer -->
+		<!-- footer social icons -->
+		<div class="social-icons-footer text-center my-3 editContent" style="outline: none; cursor: inherit;">
+			<ul class="list-unstyled">
+				<li>
+									<a href="https://www.facebook.com/profile.php?id=100013200556134">
+										<span class="fa fa-facebook" style="outline: none; cursor: inherit;"></span>
+									</a>
+								</li>
+								<li>
+									<a href="https://twitter.com/Andreimmm32">
+										<span class="fa fa-twitter" style="outline: none; cursor: inherit;"></span>
+									</a>
+								</li>
+								<li>
+									<a href="https://myaccount.google.com/?utm_source=OGB&tab=wk&utm_medium=act&pli=1">
+										<span class="fa fa-google-plus" style="outline: none; cursor: inherit;"></span>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.instagram.com/mismanmus/">
+										<span class="fa fa-instagram" style="outline: none; cursor: inherit;"></span>
+									</a>
+								</li>
+			</ul>
+		</div>
+		<!-- //footer social icons -->
+		<!-- copyright -->
+		<div class="copy_right mb-5">
+			<p class="text-center text-bl let">© 2019 KILLING VACATION. All rights reserved | Design by
+				<a href="http://vk.com/mismanmus">самый красивый парень</a>
+			</p>
+		</div>
+		<!-- //copyright -->
+
+		<!-- move top icon -->
+		<a href="#home" class="move-top text-center"></a>
+		<!-- //move top icon --></div><!-- /#page -->
+
+
+
+</body></html>

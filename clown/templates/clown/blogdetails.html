@@ -1,0 +1,393 @@
+﻿
+<html><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{title}}</title>
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+	<!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+	<!--headerIncludes-->
+    {%load staticfiles%}
+	<!-- Custom-Files -->
+	<link rel="stylesheet" href="{%static 'clown/css/bootstrap.css'%}">
+	<!-- Bootstrap-Core-CSS -->
+	<link href="{%static 'clown/css/single.css'%}" rel="stylesheet" type="text/css">
+	<!-- single page -->
+	<link rel="stylesheet" href="{%static 'clown/css/style.css'%}" type="text/css" media="all">
+	<!-- Style-CSS -->
+	<link href="{%static 'clown/css/font-awesome.min.css'%}" rel="stylesheet">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //Custom-Files -->
+
+	<!-- Web-Fonts -->
+	<link href="//fonts.googleapis.com/css?family=Aleo:300,300i,400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+	<!-- //Web-Fonts -->
+
+</head>
+
+<body>
+	<div id="page" class="page"><!-- home -->
+		
+		<!-- //home -->
+
+		<!-- contact -->
+		
+		<!-- //contact -->
+		<!-- map -->
+		
+		<!-- //map -->
+
+		<!-- footer -->
+		
+		<!-- //footer -->
+		<!-- footer social icons -->
+		
+		<!-- //footer social icons -->
+		<!-- copyright -->
+		
+		<!-- //copyright -->
+
+		<!-- move top icon -->
+		
+		<!-- //move top icon --><!-- home -->
+		
+		<!-- //home -->
+
+		<!-- about -->
+		
+		<!-- //about -->
+
+		<!-- places -->
+		
+		<!-- //places -->
+
+		<!-- what -->
+		
+		<!-- what -->
+
+		<!-- blog -->
+		
+		<!-- //blog -->
+
+		<!-- middle section -->
+		
+		<!-- //middle section -->
+
+		<!-- footer -->
+		
+		<!-- //footer -->
+		<!-- footer social icons -->
+		
+		<!-- //footer social icons -->
+		<!-- copyright -->
+		
+		<!-- //copyright -->
+
+		<!-- move top icon -->
+		
+		<!-- //move top icon --><!-- home -->
+		<div id="home">
+			<!-- banner -->
+			<div class="banner_w3lspvt-4 bg bg1">
+				<!-- nav -->
+			<div class="nav_w3ls pt-4 pb-3 text-center">
+					<nav>
+						<label for="drop" class="toggle">Меню</label>
+						<input type="checkbox" id="drop">
+						<ul class="menu">
+							<li><a href="{%url 'home'%}" style="outline: none; cursor: inherit;">Дом</a></li>
+							<li><a href="{%url 'actors'%}" style="outline: none; cursor: inherit;">Актеры</a></li>
+							<li><a href="{%url 'gallery'%}">Картинки</a></li>
+							<li>
+								<!-- First Tier Drop Down -->
+								<label for="drop-2" class="toggle toogle-2">Выбрасывающийся список <span class="fa fa-angle-down" aria-hidden="true" style="outline: none; cursor: inherit;"></span>
+								</label>
+								<a href="#" style="outline: none; cursor: inherit;">Выбрасывающийся список <span class="fa fa-angle-down" aria-hidden="true" style="outline: none; cursor: inherit;"></span></a>
+								<input type="checkbox" id="drop-2">
+								<ul class="text-left">
+									<li><a href="{%url 'home'%}#about" class="drop-text" style="outline: none; cursor: inherit;">О нас</a></li>
+									<li><a href="{%url 'home'%}#what" class="drop-text" style="outline: none; cursor: inherit;">Шо мы творим??</a></li>
+									<li><a href="{%url 'home'%}#blog" class="drop-text" style="outline: none; cursor: inherit;">Блог</a></li>
+									<li><a href="{%url 'blogdetails'%}" class="drop-text" style="outline: none; cursor: inherit;">Детализированный блог</a></li>
+								</ul>
+							</li>
+							<li><a href="{%url 'contact'%}">Свяжись со злом</a></li>
+							<li><a href="{%url 'register'%}#gal10">Зарегистрироваться</a></li>
+                            {% if user.is_anonymous %}
+                            <li><a href="#gal11">Войти</a></li>
+                            {%else%}
+                            <li><a href="{%url 'logout'%}">Выйти</a></li>
+                            {% endif %}
+                            {% if user.is_authenticated %}
+                            <img src="../../static/clown/images/te2.jpg" alt="" class="img-user" style="outline: none; cursor: inherit; width: 30px;border-radius: 50%;">
+                          
+                            {% endif %}
+                            <li>{{user}}</li>
+                            {% if user.is_authenticated %}
+                            <li>
+								<a href="">
+									<span class="" style="outline: none; cursor: inherit;">&#128722</span>
+								</a>
+							</li>
+                            {% endif %}
+						</ul>
+					</nav>
+				</div>
+				<!-- //nav -->
+
+                <div id="gal10" class="pop-overlay animate">
+					<div class="popup">
+                       <form action="" method="post">
+      {% csrf_token %}
+      <!-- as_p для того, чтобы каждый элемент формы был с новой строки -->
+      <p>
+             <label for="id_username">Ник:</label> 
+             <input type="text" name="username" maxlength="150" autofocus="" required="" id="id_username" style="background-color: #000; color: #d1af09; border: 1px solid #ced4da;"> 
+           <span class="helptext">Требуемый. 150 символов или меньше. Только буквы, цифры и спец. знаки @/./+/-/_.</span>
+      </p>
+                           <p>
+                           <label for="id_password1">Пароль:</label> 
+                           <input type="password" name="password1" required="" id="id_password1" style="background-color: #000; color: #d1af09; border: 1px solid #ced4da;"> 
+                           <span class="helptext"></span>
+                           </p>
+                           <ul>
+                           <li>Ваш пароль не может быть слишком похож на вашу другую личную информацию.</li>
+                           <li>Ваш пароль должен содержать не менее 8 символов.</li>
+                           <li>Ваш пароль не может быть часто используемым паролем.</li>
+                           <li>Ваш пароль не может быть полностью цифровым.</li>
+                           </ul>
+                           <p>
+                           <label for="id_password2">Подтверждение пароля:</label> 
+                           <input type="password" name="password2" required="" id="id_password2" style="background-color: #000; color: #d1af09; border: 1px solid #ced4da;"> 
+                           <span class="helptext">Введите тот же пароль, что и раньше, для проверки.</span>
+                           </p>
+                           <button type="submit" style="background-color: #000; color: #d1af09; border: 1px solid #ced4da;">Зарегистрироваться</button>
+      
+<a class="close" href="{%url 'blogdetails'%}">×</a>
+    </form>
+					</div>
+				</div>
+
+                 <div id="gal11" class="pop-overlay animate">
+					<div class="popup">
+								<form action="{%url 'home'%}" method="post">
+      {% csrf_token %}
+      <!-- as_p для того, чтобы каждый элемент формы был с новой строки -->
+                                    <p>
+    <label for="id_username">Ник:</label>
+    <input type="text" name="username" required id="id_username" style="background-color: #000; color: #d1af09; border: 1px solid #ced4da; right:auto;">
+</p>
+<p>
+    <label for="id_password">Пароль:</label>
+    <input type="password" name="password" required id="id_password" style="background-color: #000; color: #d1af09; border: 1px solid #ced4da; right:auto;">
+</p>
+      <button type="submit" style="background-color: #000; color: #d1af09; border: 1px solid #ced4da; right:auto;">Войти в тебя</button>
+    
+						<a class="close" href="{%url 'blogdetails'%}">×</a>
+                        </form>
+					</div>
+				</div>
+
+				<div class="banner-text-2 text-right">
+					<div class="banner-bot-2 editContent mb-3">
+						<h1><a href="{%url 'home'%}" class="logo text-wh editContent" style="outline: none; cursor: inherit;">KILLING VACATION</a></h1>
+					</div>
+				</div>
+			</div>
+			<!-- //banner -->
+		</div>
+		<!-- //home -->
+		<!-- single -->
+		<div class="blog-w3l py-5 editContent" style="outline: none; cursor: inherit;">
+			<div class="container py-xl-5 py-lg-3">
+				<div class="text-center mb-5">
+					<h3 class="editContent tittle text-bl let mb-2 pt-sm-3" style="outline: none; cursor: inherit;">На почитать</h3>
+				</div>
+				<div class="blog_section px-lg-5">
+					<div class="card border-0">
+						<a href="#">
+							<img src="../../static/clown/images/single.jpg" alt="" class="img-fluid" style="outline: none; cursor: inherit;">
+						</a>
+						<div class="card-body p-0 py-4">
+							<div class="row border-bottom pb-3">
+								<div class="col-sm-6 col-4 perso-wthree">
+									<h6 class="editContent blog-first text-bl" style="outline: none; cursor: inherit;">
+										<span class="fa fa-user mr-2" style="outline: none; cursor: inherit;"></span>Андрей Ли
+									</h6>
+								</div>
+								<div class="col-sm-6 col-8 info-commt text-right">
+									<ul class="blog_list">
+										<li class="editContent" style="outline: none; cursor: inherit;">Февраль 16, 2019</li>
+										<li class="mx-3">
+											<a href="#" class="editContent" style="outline: none; cursor: inherit;">
+												<span class="fa fa-heart-o mr-1" style="outline: none; cursor: inherit;"></span>30
+											</a>
+										</li>
+										<li>
+											<a href="#" class="editContent" style="outline: none; cursor: inherit;">
+												<span class="fa fa-comments-o mr-1" style="outline: none; cursor: inherit;"></span>18
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<a href="{%url 'blogdetails'%}" class="text-bl blog-grid-title mt-4 mb-3 editContent" style="outline: none; cursor: inherit;">Мои УБОЙНЫЕ КАНИКУЛЫ</a>
+							<p class="editContent card-text" style="outline: none; cursor: inherit;">Итак, мой день рождение (а по совместительству и мой веселый день смерти) выдался на 16 февраля и мои друзья ученили для меня праздник.</p>
+						</div>
+					</div>
+					<a href="{%url 'blogdetails'%}" class="single-text text-bl font-weight-light my-3 editContent" style="outline: none; cursor: inherit;">Мой сюжет</a>
+					<p class="editContent" style="outline: none; cursor: inherit;">Лагерь «Хрустальное озеро», 1958 год. Вожатые Клодетт и Барри залезают на чердак и занимаются там любовью. Внезапно кто-то заходит в их «тайное место» и убивает их обоих.
+
+1979 год. Новый хозяин лагеря Стив Кристи, отбросив суеверия и предрассудки, решает отремонтировать и подготовить лагерь для летнего отдыха. В одном из первых эпизодов фильма девушка по имени Энни едет в лагерь, чтобы поработать там поваром. Добродушный водитель грузовика Эннос решает подвести её. По пути они встречают местного сумасшедшего Ральфа, который говорит им, что лагерь «Хрустальное озеро» проклят и все они обречены. Девушка не верит ему и продолжает путь. По дороге в лагерь Эннос рассказывает Энни историю «кровавого лагеря» : в 1957 году там, из-за недосмотра вожатых, утонул мальчик. Спустя год произошло убийство двух вожатых. После этого лагерь закрыли, и он получил прозвища «Кровавый» и «Проклятый мертвецами». Его не раз пытались открыть, но снова и снова происходили несчастья: сначала случился пожар, потом в 1962 году кто-то отравил питьевую воду. Энни не верит и ему. Она останавливает попутную машину и просит подвезти её в лагерь, но за рулем оказывается убийца, который отвозит Энни в лес и убивает, перерезав ей горло. Тем временем ещё одна машина направляется к «Хрустальному озеру». В ней трое будущих вожатых: Джек, Марси и Нед. Они приезжают в лагерь, где их уже ждут Стив Кристи и его помощники: Элис, Билл и Бренда.
+
+Готовясь к приезду детей ребята отлично проводят время в лагере: купаются, загорают, веселятся. Вечером Стив Кристи уезжает в город по делам и вожатые остаются в лагере одни. Нед, прогуливаясь по лагерю, замечает кого-то в одном из домиков. Он заходит туда, но там его уже ждёт убийца. Он убивает юношу, перерезав ему горло. Марси и Джек гуляют по лагерю, но неожиданно начинается дождь. Они укрываются в одном из домиков и занимаются там любовью. Некоторое время спустя Марси выходит из домика, чтобы сходить в туалет и Джек остаётся один. Он курит, лёжа в кровати, но под кроватью находится убийца. Он неожиданно снизу пронзает шею Джека стрелой насквозь. Покончив с ним, убийца отправляется за Марси. Спрятавшись в душевой, он нападает на девушку и убивает её, воткнув ей топор в лоб.</p>
+					
+					<a href="{%url 'blogdetails'%}" class="text-bl blog-grid-title mt-4 mb-3 editContent" style="outline: none; cursor: inherit;">Продолжим</a>
+					<div class="row">
+						<div class="col-md-6">
+							<p class="editContent" style="outline: none; cursor: inherit;">Тем временем Элис, Билл и Бренда сидят в домике, поют песни, играют в «Монополию», не зная о смерти своих друзей. Бренда вспоминает, что забыла закрыть окно в своём домике. Она отправляется туда и собирается лечь спать, но внезапно слышит детский крик. Девушка отправляется в поиски, но это оказывается ловушкой. Убийца находит Бренду на площадке стрельбы из лука и убивает её, задушив верёвкой. Следующей жертвой становится Стив Кристи. Он сталкивается с убийцей на обратном пути и получает удар ножом в грудь. В лагере неожиданно гаснет свет. Билл идёт проверять генератор и не возвращается. Элис отправляется на поиски и обнаруживает его с перерезанным горлом, пронзённого стрелами на двери гаража. Испуганная до смерти девушка бежит обратно в домик и запирается изнутри, где обнаруживает тело Бренды. Вскоре Элис замечает машину, приехавшую в лагерь. Думая, что это Стив, Элис бежит ему навстречу, но вместо Стива встречает незнакомую женщину средних лет, которая представляется его давней подругой, миссис Вурхиз.</p>
+						</div>
+						<div class="col-md-6">
+							<p class="editContent" style="outline: none; cursor: inherit;">Из дальнейшего рассказа миссис Вурхиз становится известно, что она является матерью того самого утонувшего мальчика, Джейсона Вурхиза, что она убила в 1958 году двух вожатых, виня их в смерти сына, она отравила всю питьевую воду и устроила пожар. И это она же убила Кристи и всех остальных, потому что была уверена, что если лагерь вновь откроют, то подобное судьбы Джейсона может случиться и с другими детьми. Миссис Вурхиз пытается расправиться с Элис, но та после долгой борьбы выхватывает мачете и отрубает сумасшедшей женщине голову. Наступает утро. Элис просыпается в лодке на середине реки. Она видит приближающуюся полицейскую машину, но в это самое время из воды выныривает тело утонувшего мальчика Джейсона и утаскивает Элис за собой на дно озера.</p>
+						</div>
+					</div>
+					<a href="{%url 'blogdetails'%}" class="single-text text-bl font-weight-light mt-4 editContent" style="outline: none; cursor: inherit;">Конец</a>
+					<p class="editContent my-3" style="outline: none; cursor: inherit;">Девушка просыпается в больнице. Шериф сообщает ей, что никто кроме неё не смог выжить в этой страшной резне. Но Элис говорит, что видела мальчика и понимает — он всё ещё там.</p>
+					
+					<div class="comment-top mt-5">
+						<h4 class="editContent" style="outline: none; cursor: inherit;">Коменты</h4>
+                        {% for com in comments %}
+						 <div class="media mt-5 editContent" style="outline: none; cursor: inherit;">
+							<img src="../../static/clown/images/te2.jpg" alt="" class="img-fluid" style="outline: none; cursor: inherit;">
+							<div class="media-body  pt-xl-2 pl-3">
+								<h5 class="editContent mb-2 let" style="outline: none; cursor: inherit;">{{com.user}}</h5>
+								<p class="editContent" style="outline: none; cursor: inherit;">{{com.text}}</p>
+							</div>
+						</div>
+                        {% endfor %}
+					</div>
+                    {% if user.is_authenticated %}
+					<div class="comment-top mt-5">
+						<h4 class="editContent" style="outline: none; cursor: inherit;">Оставь коммент</h4>
+						<div class="comment-bottom mobamuinfo_mail_grid_right mb-4 editContent" style="outline: none; cursor: inherit;">
+							<form action="#" method="post">
+								<div class="form-group editContent" style="outline: none; cursor: inherit;">
+									<textarea class="form-control" name="Message" placeholder="Сообщение..." required=""></textarea>
+								</div>
+								<button type="submit" class="btn submit mt-4" style="outline: none; cursor: inherit;">Тыркни</button>
+							</form>
+						</div>
+					</div>
+                    {% endif %}
+				</div>
+			</div>
+		</div>
+		<!-- //single -->
+
+		<!-- middle section -->
+		<section class="w3ls-middle py-5 text-center bg bg1" id="some" style="outline: none; cursor: inherit;">
+			<div class="container py-xl-5 my-lg-5">
+				<span class="w3-line text-uppercase mb-3 editContent" style="outline: none; cursor: inherit;">KILLING VACATION</span>
+				<h3 class="editContent w3pvt-web-title mb-4" style="outline: none; cursor: inherit;">Начни свою игру...</h3>
+				<a href="#about" class="btn button-style-2 mt-sm-5 mt-4" style="outline: none; cursor: inherit;">Читать далее</a>
+			</div>
+		</section>
+		<!-- //middle section -->
+
+		<!-- footer -->
+		<footer class="py-4 editContent" style="outline: none; cursor: inherit;">
+			<div class="container py-xl-5 py-3">
+				<div class="row">
+					<div class="col-lg-4 col-sm-6 col-8 footer-grid editContent mb-3" style="outline: none; cursor: inherit;">
+						<h2 class="mb-3">
+							<a class="logo-footer tm-clr let editContent" href="{%url 'home'%}" style="outline: none; cursor: inherit;">KILLING VACATION</a>
+						</h2>
+					</div>
+					<div class="offset-lg-1 col-lg-2 col-sm-6 col-4 footer-grid mt-lg-0 mt-4 editContent mb-3" style="outline: none; cursor: inherit;">
+						<ul class="list-unstyled footer">
+							<li>
+								<a href="{%url 'home'%}" style="outline: none; cursor: inherit;">Указатель</a>
+							</li>
+							<li>
+								<a href="{%url 'home'%}#about" style="outline: none; cursor: inherit;">О нас</a>
+							</li>
+							<li>
+								<a href="{%url 'home'%}#what" style="outline: none; cursor: inherit;">Шо мы творим</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-lg-2 col-6 footer-grid mt-lg-0 mt-4 editContent mb-3" style="outline: none; cursor: inherit;">
+						<ul class="list-unstyled footer">
+							<li>
+								<a href="{%url 'home'%}#desti" style="outline: none; cursor: inherit;">Клоуны</a>
+							</li>
+							<li>
+								<a href="{%url 'home'%}#blog" style="outline: none; cursor: inherit;">Блог</a>
+							</li>
+							<li>
+								<a href="{%url 'blogdetails'%}" style="outline: none; cursor: inherit;">Развернутый блог</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-lg-2 col-6 footer-grid mt-lg-0 mt-4 editContent mb-3" style="outline: none; cursor: inherit;">
+						<ul class="list-unstyled footer">
+							<li>
+								<a href="{%url 'gallery'%}" style="outline: none; cursor: inherit;">Картинки</a>
+							</li>
+							<li>
+								<a href="{%url 'contact'%}" style="outline: none; cursor: inherit;">Свяжись с нами</a>
+							</li>
+							<li>
+								<a href="{%url 'home'%}#some" style="outline: none; cursor: inherit;">И еще немного</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- //footer -->
+		<!-- footer social icons -->
+		<div class="social-icons-footer text-center my-3 editContent" style="outline: none; cursor: inherit;">
+			<ul class="list-unstyled">
+				<li>
+									<a href="https://www.facebook.com/profile.php?id=100013200556134">
+										<span class="fa fa-facebook" style="outline: none; cursor: inherit;"></span>
+									</a>
+								</li>
+								<li>
+									<a href="https://twitter.com/Andreimmm32">
+										<span class="fa fa-twitter" style="outline: none; cursor: inherit;"></span>
+									</a>
+								</li>
+								<li>
+									<a href="https://myaccount.google.com/?utm_source=OGB&tab=wk&utm_medium=act&pli=1">
+										<span class="fa fa-google-plus" style="outline: none; cursor: inherit;"></span>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.instagram.com/mismanmus/">
+										<span class="fa fa-instagram" style="outline: none; cursor: inherit;"></span>
+									</a>
+								</li>
+			</ul>
+		</div>
+		<!-- //footer social icons -->
+		<!-- copyright -->
+		<div class="copy_right mb-5">
+			<p class="text-center text-bl let">© 2019 KILLING VACATION. All rights reserved | Design by
+				<a href="http://vk.com/mismanmus">самый красивый парень</a>
+			</p>
+		</div>
+		<!-- //copyright -->
+
+		<!-- move top icon -->
+		<a href="#home" class="move-top text-center"></a>
+		<!-- //move top icon --></div><!-- /#page -->
+
+
+
+</body></html>
